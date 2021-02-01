@@ -1,0 +1,19 @@
+<div class="header-wrapper">
+  
+  <%# ヘッダー左側 %>
+  <div class="header-wrapper-left">
+    <%= link_to image_tag("TORELOG-LOGO.png"), root_path %>
+  </div>
+
+  <%# ヘッダー右側 %>
+  <div class="header-wrapper-right">
+    <%# ユーザーがログインしているのか判別 %>
+    <% if user_signed_in? %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "uk-button uk-button-primary" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "login-button uk-button uk-button-primary" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "uk-button uk-button-primary" %>
+    <% end %>
+  </div>
+
+</div>
