@@ -1,24 +1,43 @@
-# README
+# torelog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## テーブル設計
+### ER図
 
-Things you may want to cover:
+### usersテーブル
+| Column             | Type   | Options                   | 
+| ------------------ | ------ | ------------------------- | 
+| nickname           | string | null: false, unique: true | 
+| encrypted_password | string | null: false               | 
 
-* Ruby version
+#### Association
+has_many :days
 
-* System dependencies
+### daysテーブル
+| Column        | Type       | Options                        | 
+| ------------- | ---------- | ------------------------------ | 
+| date          | date       | null: false                    | 
+| target_exists | boolean    | null: false                    | 
+| chest         | boolean    |                                | 
+| shoulder      | boolean    |                                | 
+| tricep        | boolean    |                                | 
+| bicep         | boolean    |                                | 
+| back          | boolean    |                                | 
+| abdominal     | boolean    |                                | 
+| leg           | boolean    |                                | 
+| user_id       | references | null: false, foreign_key: true | 
 
-* Configuration
+#### Association
+belongs_to :user<br>
+has_many :logs
 
-* Database creation
+### logsテーブル
+| Column   | Type       | Options                        | 
+| -------- | ---------- | ------------------------------ | 
+| training | string     | null: false                    | 
+| weight   | float      | null: false                    | 
+| rep      | integer    | null: false                    | 
+| set      | integer    | null: false                    | 
+| day_id   | references | null: false, foreign_key: true | 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Association
+belongs_to :day
