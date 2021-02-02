@@ -15,7 +15,7 @@
           <td>
             <div class="form-group">
               <%= f.text_field :nickname, autocomplete: "off", class: "form-field" %>
-              <p class="form-description">※4文字以上20文字以下</p>
+              <div class="form-description">※4文字以上20文字以下</div>
             </div>
           </td>
         </tr>
@@ -24,7 +24,7 @@
           <td>
             <div class="form-group">
               <%= f.password_field :password, autocomplete: "off", class: "form-field" %>
-              <p class="form-description">※6文字以上英数字混合</p>
+              <div class="form-description">※6文字以上英数字混合</div>
             </div>
           </td>
         </tr>
@@ -33,7 +33,7 @@
           <td>
             <div class="form-group">
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-field" %>
-              <p class="form-description">※パスワードと同様</p>
+              <div class="form-description">※パスワードと同様</div>
             </div>
           </td>
         </tr>
