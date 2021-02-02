@@ -19,3 +19,10 @@
  * {
   box-sizing: border-box;
  }
+
+ .main {
+   width: 100vw;
+   margin: 30px auto;
+   min-height: calc(100vh - 160px);
+   display: flex;
+ }

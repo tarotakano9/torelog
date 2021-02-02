@@ -1,13 +1,13 @@
 /* ヘッダー */
 .header-wrapper {
-  height: 50px;
+  height: 80px;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid dimgray;
+  border-bottom: 2px solid dimgray;
 }
 
 .header-wrapper-right {
