@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :authentication_keys => [:nickname]
 
-           #usernameを必須とする
+  #usernameを必須とする
   validates_uniqueness_of :nickname
   validates_presence_of :nickname
 

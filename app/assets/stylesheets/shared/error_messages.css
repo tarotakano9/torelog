@@ -1,0 +1,21 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  background-color: #F4D2DE;
+}
+
+.error-messages {
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.login-flash-message {
+  margin-top: 20px;
+  background-color: #F4D2DE;
+  color: red;
+  font-weight: bold;
+}

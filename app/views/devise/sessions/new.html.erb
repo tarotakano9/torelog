@@ -6,7 +6,10 @@
       <span class="form-header-text">ログイン</span>
     </div>
 
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
 
     <div class="form-groups">
       <table class="uk-table uk-table-divider">
