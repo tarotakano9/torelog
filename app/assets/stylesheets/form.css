@@ -1,6 +1,7 @@
 /* フォーム共通 */
 .form-wrapper {
   width: 70%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -21,7 +22,7 @@
 }
 
 .form-groups {
-  margin: auto;
+  margin: 5vh auto auto auto;
   width: 100%;
 }
 
