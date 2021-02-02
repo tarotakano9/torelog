@@ -13,10 +13,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
   validates :password_confirmation, presence: true
 
-  #usernameを必須とする
-  # validates_uniqueness_of :nickname
-  # validates_presence_of :nickname
-
   #usernameを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
