@@ -1,0 +1,45 @@
+/* フォーム共通 */
+.form-wrapper {
+  width: 70%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  height: 75px;
+  background-color: black;
+}
+
+.form-header-text {
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  line-height: 75px;
+}
+
+.form-groups {
+  margin: 5vh auto auto auto;
+  width: 100%;
+}
+
+.form-text {
+  font-weight: bold;
+}
+
+.form-field {
+  border: 3px solid #007AB7;
+  width: 20vw;
+  min-width: 200px;
+}
+
+.link-text {
+  text-decoration-line: underline;
+}
+
+.submit-button {
+  margin-top: 30px;
+}

@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "reset";
+
+ * {
+  box-sizing: border-box;
+ }
+
+ .main {
+   width: 100vw;
+   margin: 30px auto;
+   height: 100vh;
+   display: flex;
+ }

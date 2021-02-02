@@ -1,0 +1,19 @@
+/* ヘッダー */
+.header-wrapper {
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid dimgray;
+}
+
+.header-wrapper-right {
+  margin-right: 20px;
+}
+
+.login-button {
+  margin-right: 20px;
+}
