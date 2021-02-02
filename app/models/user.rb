@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   # バリデーション
   validates :nickname, presence: true, uniqueness: true, length: { in: 4..20 }
-  validates :password, presence: true, length: { minimum: 6 }, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
+  validates :password, length: { minimum: 6 }, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
   validates :password_confirmation, presence: true
 
   #usernameを利用してログインするようにオーバーライド
