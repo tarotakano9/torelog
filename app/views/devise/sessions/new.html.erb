@@ -1,26 +1,37 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.email_field :nickname, autofocus: true, autocomplete: "nickname" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<%= render "shared/header_sign_in" %>
+<div class="main">
+    <%= form_with model: @user, url: user_session_path, class: "form-wrapper", local: true do |f| %>
+  
+    <div class="form-header">
+      <span class="form-header-text">ログイン</span>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= render "devise/shared/links" %>
+    <div class="form-groups">
+      <table class="uk-table uk-table-divider">
+        <tr>
+          <td><%= f.label :nickname, 'ニックネーム', class: "form-text" %></td>
+          <td>
+            <div class="form-group">
+              <%= f.text_field :nickname, autocomplete: "off", class: "form-field" %><br/>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.label :password, 'パスワード', class: "form-text" %></td>
+          <td>
+            <div class="form-group">
+              <%= f.password_field :password, autocomplete: "off", class: "form-field" %><br/>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <%= link_to "ユーザー登録がお済みでない方はこちら", new_user_registration_path, class: "link-text" %>
+      <div class="submit-button">
+        <%= f.submit "ログイン", class: "uk-button uk-button-primary" %>
+      </div>
+    </div>
+    <% end %>
+</div>
+<%= render "shared/footer" %>
