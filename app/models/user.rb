@@ -5,6 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :authentication_keys => [:nickname]
 
+  # 正規表現
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+
+  # バリデーション
+  validates :nickname, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 6 }, confirmation: true, format: { with: VALID_PASSWORD_REGEX }
+  validates :password_confirmation
+
   #usernameを必須とする
   validates_uniqueness_of :nickname
   validates_presence_of :nickname
