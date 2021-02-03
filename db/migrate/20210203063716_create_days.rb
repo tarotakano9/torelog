@@ -1,7 +1,7 @@
 class CreateDays < ActiveRecord::Migration[6.0]
   def change
     create_table :days do |t|
-      t.date        :date, null: false
+      t.date        :date,          null: false
       t.boolean     :target_exists, default: false, null: false
       t.boolean     :chest,         default: false, null: false
       t.boolean     :shoulder,      default: false, null: false
