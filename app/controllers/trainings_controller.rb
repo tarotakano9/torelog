@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
   end
 
@@ -12,10 +12,15 @@ class TrainingsController < ApplicationController
     @day = Day.new(day_params)
     judge_target_exists
     if @day.save
-      redirect_to root_path
+      redirect_to  submit_log_training_path(@day.id)
     else
       render :new
     end
+  end
+
+  def submit_log
+    @day = Day.find(params[:id])
+    binding.pry
   end
 
   private
