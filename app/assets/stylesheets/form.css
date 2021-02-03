@@ -34,7 +34,7 @@
 .form-field {
   border: 3px solid #007AB7;
   width: 50%;
-  min-width: 200px;
+  /* min-width: 200px; */
 }
 
 .link-text {

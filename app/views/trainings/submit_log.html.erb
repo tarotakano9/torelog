@@ -1,1 +1,68 @@
-よくきたな
+<%= render "shared/header" %>
+<div class="main">
+  <%= form_with model: @log, url: trainings_path, class: "form-wrapper", local: true do |f| %> 
+
+    <div class="form-header">
+      <span class="form-header-text">トレーニング記録を入力</span>
+    </div>
+
+    <div class="show-training-day-wrap">
+      <div class="training-day-text"><%= @day.date %></div>
+      <div class="training-day-text">
+        ターゲット :
+        <% if @day.chest %>
+          <span class="training-day-text">胸</span>
+        <% end %>
+        <% if @day.shoulder %>
+          <span class="training-day-text">肩</span>
+        <% end %>
+        <% if @day.tricep %>
+          <span class="training-day-text">上腕三頭筋</span>
+        <% end %>
+        <% if @day.bicep %>
+          <span class="training-day-text">上腕二頭筋</span>
+        <% end %>
+        <% if @day.back %>
+          <span class="training-day-text">背中</span>
+        <% end %>
+        <% if @day.abdominal %>
+          <span class="training-day-text">腹筋</span>
+        <% end %>
+        <% if @day.leg %>
+          <span class="training-day-text">脚</span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="log-form-wrap">
+      <div class="log-form-heads">
+        <div class="log-form-head">セット</div>
+        <div class="log-form-head">種目</div>
+        <div class="log-form-head">重量[kg]</div>
+        <div class="log-form-head">rep[回]</div>
+      </div>
+      <div class="log-form-bottoms">
+        <% 50.times do |set| %>
+        <div class ="log-form-bottom">
+            <div class="set-num"><%= set+1 %></div>
+            <%= f.text_field :training , autocomplete: "off", class: "log-form-field" %>
+            <%= f.number_field :weight, class: "log-form-field" %>
+            <%= f.number_field :rep, class: "log-form-field" %> 
+        </div>
+        <% end %>
+      </div>
+          
+              
+                
+          
+                
+      <div class="submit-button">
+        <%= f.submit "トレーニング終了", class: "uk-button uk-button-primary" %>
+      </div>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+  <% end %>
+</div>
+<%= render "shared/footer" %>

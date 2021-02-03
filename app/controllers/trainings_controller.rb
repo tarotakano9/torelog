@@ -20,7 +20,7 @@ class TrainingsController < ApplicationController
 
   def submit_log
     @day = Day.find(params[:id])
-    binding.pry
+    @log = Log.new
   end
 
   private
