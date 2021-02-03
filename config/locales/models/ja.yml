@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      day: ユーザー
+    attributes:
+      day:
+        target_exists: ターゲット部位
+    errors:
+      models:
+        day:
+          attributes:
+            target_exists:
+              format: '%{message}'
+              inclusion: '%{attribute}は１箇所以上入力してください。'

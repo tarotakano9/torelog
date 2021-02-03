@@ -28,11 +28,12 @@
 
 .form-text {
   font-weight: bold;
+  font-size: large;
 }
 
 .form-field {
   border: 3px solid #007AB7;
-  width: 20vw;
+  width: 50%;
   min-width: 200px;
 }
 
@@ -42,4 +43,12 @@
 
 .submit-button {
   margin-top: 30px;
+}
+
+.target-group {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
