@@ -42,6 +42,23 @@
   width: 100%;
   height: calc(75% - 30px);
   overflow: auto;
+  border: 1px solid gray;
+  padding: 5px 10px 5px 5px;
+}
+
+#log-form-bottoms::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+#log-form-bottoms::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: 0 0 4px #aaa inset;
+}
+
+#log-form-bottoms::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #1959A8;
 }
 
 .log-form-bottom {
