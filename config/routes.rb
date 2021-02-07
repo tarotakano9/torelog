@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :trainings do
     member do
       get :submit_log
+      patch :create_log
     end
   end
 end

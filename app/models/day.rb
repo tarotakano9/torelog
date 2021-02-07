@@ -16,4 +16,5 @@ class Day < ApplicationRecord
   # アソシエーション
   belongs_to :user
   has_many :logs, dependent: :destroy
+  accepts_nested_attributes_for :logs, reject_if: :all_blank, allow_destroy: true
 end

@@ -1,6 +1,6 @@
 /* フォーム共通 */
 .form-wrapper {
-  width: 70%;
+  width: 80%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -42,13 +42,30 @@
 }
 
 .submit-button {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 
 .target-group {
   width: 50%;
+  height: 100%;
   margin: auto;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.target-group-left {
+  display: flex;
   justify-content: flex-start;
+  width: 50%;
+  height: 25%;
+  align-items: center;
+}
+
+.target-group-right {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  height: 25%;
   align-items: center;
 }

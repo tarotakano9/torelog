@@ -4,7 +4,6 @@ class Log < ApplicationRecord
     validates :training
     validates :weight
     validates :rep
-    validates :set
   end
 
   # アソシエーション

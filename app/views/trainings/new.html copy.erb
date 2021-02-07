@@ -1,0 +1,68 @@
+<%= render "shared/header" %>
+<div class="main">
+  <%= form_with model: @day, url: trainings_path, class: "form-wrapper", local: true do |f| %>
+
+    <div class="form-header">
+      <span class="form-header-text">トレーニング実施日を入力</span>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-groups">
+      <table class="uk-table uk-table-divider">
+        <tr>
+          <td><%= f.label :date, '日付', class: "form-text" %></td>
+          <td>
+            <div class="form-group">
+              <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class: "form-field" %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <div class="form-text">
+                ターゲット選択
+              </div>
+            </td>
+          <td>
+            <div class="form-group">
+              <div class="target-group">
+                <%= f.check_box :chest, {class: "target-box"} , true, false %>
+                <%= f.label :chest, '胸' %>
+              </div>
+              <div class="target-group">
+                <%= f.check_box :shoulder, {} , true, false %>
+                <%= f.label :shoulder, '肩' %>
+              </div>
+              <div class="target-group">
+                <%= f.check_box :tricep, {} , true, false %>
+                <%= f.label :tricep, '上腕三頭筋' %>
+              </div>
+              <div class="target-group">
+                <%= f.check_box :bicep, {} , true, false %>
+                <%= f.label :bicep, '上腕二頭筋' %>
+              </div>
+              <div class="target-group">
+                <%= f.check_box :back, {} , true, false %>
+                <%= f.label :back, '背中' %>
+              </div>
+              <div class="target-group">
+                <%= f.check_box :abdominal, {} , true, false %>
+                <%= f.label :abdominal, '腹筋' %>
+              </div>
+              <div class="target-group">
+                <%= f.check_box :leg, {} , true, false %>
+                <%= f.label :leg, '脚' %>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="submit-button">
+        <%= f.submit "トレーニング開始", class: "uk-button uk-button-primary" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+<%= render "shared/footer" %>

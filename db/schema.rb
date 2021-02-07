@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_063732) do
     t.string "training", null: false
     t.float "weight", null: false
     t.integer "rep", null: false
-    t.integer "set", null: false
     t.bigint "day_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

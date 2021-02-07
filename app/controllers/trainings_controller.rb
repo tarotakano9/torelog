@@ -6,29 +6,28 @@ class TrainingsController < ApplicationController
 
   def new
     @day = Day.new
+    @day.logs.build
+    @set = 0
   end
 
   def create
     @day = Day.new(day_params)
     judge_target_exists
     if @day.save
-      redirect_to  submit_log_training_path(@day.id)
+      redirect_to  root_path
     else
       render :new
     end
   end
 
-  def submit_log
-    @day = Day.find(params[:id])
-    @log = Log.new
-  end
-
   private
 
-  def day_params
-    params.require(:day).permit(
-      :date, :target_exists, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg
-    ).merge(user_id: current_user.id)
+  def dey_params
+    params.require(:day)
+      .permit(
+        :date, :target_exists, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg,
+        [logs_attributes: [:training, :weight, :rep, :day_id, :_destroy]])
+      .merge(user_id: current_user.id)
   end
 
   def judge_target_exists
