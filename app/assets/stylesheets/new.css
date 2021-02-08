@@ -15,7 +15,6 @@
   width: 100%;
   height: 7vh;
   display: flex;
-  background-color: skyblue;
 }
 
 .new-date-wrapper-left {
@@ -25,11 +24,9 @@
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid gray;
-  background-color: slateblue;
 }
 
 .new-date-wrapper-right {
-  background-color: goldenrod;
   width: 50%;
   height: 100%;
   display: flex;
@@ -111,6 +108,7 @@
 .log-form-field {
   border: 3px solid #007AB7;
   width: 100%;
+  min-width: 200px;
   height: 30px;
 }
 

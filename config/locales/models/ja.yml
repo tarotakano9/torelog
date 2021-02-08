@@ -1,10 +1,15 @@
 ja:
   activerecord:
     models:
-      day: ユーザー
+      day: トレーニング実施日
+      log: 記録
     attributes:
       day:
         target_exists: ターゲット部位
+      day/logs:
+        training: 種目
+        weight: 重量
+        rep: 回数
     errors:
       models:
         day:
