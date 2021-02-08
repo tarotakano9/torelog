@@ -1,0 +1,147 @@
+.new-main {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.new-form-header {
+  margin-top: 10px;
+  width: 100%;
+  background-color: black;
+}
+
+.new-date-wrapper {
+  margin-top: 10px;
+  width: 100%;
+  height: 7vh;
+  display: flex;
+}
+
+.new-date-wrapper-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+.new-date-wrapper-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+
+.new-target-wrapper {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.new-target-wrapper-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-target-wrapper-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+.target-group-left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.target-group-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.new-log-wrapper {
+  margin-top: 20px;
+  width: 100%;
+  height: 45%;
+}
+
+.new-log-header {
+  width: 100%;
+  height: 15%;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.new-log-form-wrapper {
+  width: 100%;
+  height: 85%;
+  border: 1px solid #007AB7;
+  overflow: auto;
+}
+
+.log-fields {
+  margin-top: 10px;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.log-form-field {
+  border: 3px solid #007AB7;
+  width: 100%;
+  min-width: 200px;
+  height: 30px;
+}
+
+.log-form-wrapper {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.log-remove-button {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.add-association-button {
+  margin-top: 10px;
+}
+
+#new-log-form-wrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+#new-log-form-wrapper::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: 0 0 4px #aaa inset;
+}
+
+#new-log-form-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #1959A8;
+}

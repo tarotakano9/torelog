@@ -1,5 +1,18 @@
 <%= render "shared/header" %>
 <div class="main">
-
+  <div class="home-links">
+    <%= link_to new_training_path, class: "home-link-group" do %>
+      <%= image_tag "training-icon", class: "banner-icon" %>
+      <h1 class="home-link-text">トレーニング記録入力</h1>
+    <% end %>
+    <%= link_to  "#", class: "home-link-group" do %>
+      <%= image_tag "log-icon", class: "banner-icon" %>
+      <h1 class="home-link-text">トレーニング記録確認</h1>
+    <% end %>
+    <%= link_to  "#", class: "home-link-group" do %>
+      <%= image_tag "option-icon", class: "banner-icon" %>
+      <h1 class="home-link-text">オプション</h1>
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>

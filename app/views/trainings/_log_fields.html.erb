@@ -1,0 +1,16 @@
+<div class="nested-fields">
+  <div class="log-fields">
+    <div class="log-form-wrapper">
+      <%= f.text_field :training, class: "log-form-field" %>
+    </div>
+    <div class="log-form-wrapper">
+      <%= f.number_field :weight, class: "log-form-field" %>
+    </div>
+    <div class="log-form-wrapper">
+      <%= f.number_field :rep, class: "log-form-field" %>
+    </div>
+    <div class="log-remove-button">
+      <%= link_to_remove_association "削除", f, class: "uk-button uk-button-danger uk-button-small", id: 'remove-btn' %>
+    </div>
+  </div> 
+</div>
