@@ -4,7 +4,10 @@
     <div class="new-form-header">
       <span class="form-header-text">トレーニング記録入力</span>
     </div>
-    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="error-messages-box">
+      <%= render 'shared/error_messages', model: f.object %>
+    </div>
 
     <div class="new-date-wrapper">
       <div class="new-date-wrapper-left">

@@ -22,7 +22,7 @@ class TrainingsController < ApplicationController
 
   private
 
-  def dey_params
+  def day_params
     params.require(:day)
       .permit(
         :date, :target_exists, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg,
