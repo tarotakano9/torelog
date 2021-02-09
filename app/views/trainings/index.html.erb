@@ -7,49 +7,75 @@
   <div class="index-serch-wrapper">
     検索フォーム
   </div>
-
-  <div class="index-days-wrapper">
-    <table class="uk-table">
-      <tbody>
-        <tr>
-            <div class="index-table-column">
-              <div class="column-main">
-                日付
-              </div>
-              <div class="column-sub">
-                詳細
-              </div>
-              <div class="column-sub">
-                編集
-              </div>
-              <div class="column-sub">
-                削除
-              </div>
-            </div>
-        </tr>
-      </body>
-      <tbody>
-        <% @days.each do |day| %>
-        <tr>
-            <div class="index-table-column">
-              <div class="column-main">
-                <%= day.date %>
-              </div>
-              <div class="column-sub">
-                <%= link_to "show", root_path, class: "uk-button uk-button-primary uk-button-small" %>
-              </div>
-              <div class="column-sub">
-                <%= link_to "edit", root_path, class: "uk-button uk-button-primary uk-button-small" %>
-              </div>
-              <div class="column-sub">
-                <%= link_to "delete", root_path, class: "uk-button uk-button-danger uk-button-small" %>
-              </div>
-            </div>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    
+  <div class="index-table-head">
+    <div class="column-main">日付</div>
+    <div class="column-show-targets">
+      <div class="column-head-target">胸</div>
+      <div class="column-head-target">肩</div>
+      <div class="column-head-target">三頭</div>
+      <div class="column-head-target">二頭</div>
+      <div class="column-head-target">背</div>
+      <div class="column-head-target">腹</div>
+      <div class="column-head-target-last">脚</div>
+    </div>
+    <div class="column-head-sub-left">編集</div>
+    <div class="column-sub">削除</div>
   </div>
+    <div class="index-table-main">
+      <% @days.each do |day| %>
+        <div class="index-table-column">
+          <div class="column-main">
+            <%= link_to "#" do %>
+              <%= day.date %>
+            <% end %>
+          </div>
+          <div class="column-show-targets">
+            <div class="column-show-target">
+              <% if day.chest %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+            <div class="column-show-target">
+              <% if day.shoulder %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+            <div class="column-show-target">
+              <% if day.tricep %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+            <div class="column-show-target">
+              <% if day.bicep %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+            <div class="column-show-target">
+              <% if day.back %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+            <div class="column-show-target">
+              <% if day.abdominal %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+            <div class="column-show-target-last">
+              <% if day.leg %>
+                <span class="target-circle">◯</span>
+              <% end %>
+            </div>
+          </div>
+            <div class="column-sub-left">
+              <%= link_to "edit", root_path, class: "uk-button uk-button-primary uk-button-small" %>
+            </div>
+            <div class="column-sub">
+              <%= link_to "delete", root_path, class: "uk-button uk-button-danger uk-button-small" %>
+            </div>
+        </div>
+      <% end %>
+    </div>
 
 </div>
 <%= render "shared/footer" %>

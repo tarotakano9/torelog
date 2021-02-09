@@ -2,7 +2,7 @@ class TrainingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @days = Day.includes(:user).order(id: 'DESC')
+    @days = Day.includes(:user).where(user_id: current_user.id).order(id: 'DESC')
   end
 
   def new

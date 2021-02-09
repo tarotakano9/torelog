@@ -12,15 +12,33 @@
 }
 
 .index-serch-wrapper {
-  margin-top: 10px;
   height: 100px;
   background-color: skyblue;
+  margin: 30px auto;
 }
 
-.index-days-wrapper {
-  margin-top: 10px;
+.index-table-head {
+  font-weight: bold;
+  color: white;
+  background-color: gray;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
   width: 100%;
-  min-height: 10vh;
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+.index-table-main {
+  width: 100%;
+  min-height: 7vh;
+  max-height: 70vh;
+  overflow: auto;
+  border: 1px solid gray;
+  margin-bottom: 20px;
 }
 
 .index-table-column {
@@ -35,7 +53,7 @@
 }
 
 .column-main {
-  width: 61%;
+  width: 45%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -43,9 +61,76 @@
 }
 
 .column-sub {
-  width: 13%;
+  width: 10%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.column-head-sub-left {
+  border-right: 1px solid white;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-sub-left {
+  border-right: 1px solid gray;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-show-targets {
+  width: 35%;
+  height: 100%;
+  display: flex;
+}
+
+.column-show-target {
+  border-left: 1px solid gray;
+  height: 100%;
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-head-target {
+  border-left: 1px solid white;
+  height: 100%;
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-show-target-last {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  height: 100%;
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-head-target-last {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  height: 100%;
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.target-circle {
+  font-weight: bold;
+  color: blue;
 }
