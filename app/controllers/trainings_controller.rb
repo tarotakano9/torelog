@@ -2,7 +2,12 @@ class TrainingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @days = Day.includes(:user).where(user_id: current_user.id).order(id: 'DESC')
+    @days = Day.includes(:user).where(user_id: current_user.id).order(date: 'DESC')
+  end
+
+  def show
+    @day = Day.find(params[:id])
+    @logs = Log.includes(:day).where(day_id: @day.id)
   end
 
   def new

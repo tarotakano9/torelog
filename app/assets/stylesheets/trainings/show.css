@@ -1,0 +1,124 @@
+.show-header {
+  margin-top: 10px;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-targets {
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+}
+
+.option-buttons {
+  margin-top: 20px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.show-logs-head {
+  margin-top: 20px;
+  width: 100%;
+  height: 7vh;
+  background-color: gray;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  display: flex;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.show-logs-head-set {
+  height: 100%;
+  width: 10%;
+  border-right: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-head-main {
+  height: 100%;
+  width: 40%;
+  border-right: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-head-weight {
+  height: 100%;
+  width: 25%;
+  border-right: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-head-rep {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-main {
+  width: 100%;
+  min-height: 0;
+  max-height: 70vh;
+  overflow: auto;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+}
+
+.show-logs-column {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.show-logs-set {
+  height: 100%;
+  width: 10%;
+  border-right: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-training {
+  height: 100%;
+  width: 40%;
+  border-right: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-weight {
+  height: 100%;
+  width: 25%;
+  border-right: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-logs-rep {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

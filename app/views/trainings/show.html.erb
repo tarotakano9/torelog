@@ -1,0 +1,79 @@
+<%= render "shared/header" %>
+<div class="index-main">
+  <div class="show-header">
+    <div class="form-header-text"><%= @day.date %></div>
+    <div class="show-targets">(
+      <% if @day.chest %>
+        胸
+      <% end %>
+      <% if @day.shoulder %>
+        肩
+      <% end %>
+      <% if @day.tricep %>
+        三頭
+      <% end %>
+      <% if @day.bicep %>
+        二頭
+      <% end %>
+      <% if @day.back %>
+        背
+      <% end %>
+      <% if @day.abdominal %>
+        腹
+      <% end %>
+      <% if @day.leg %>
+        脚
+      <% end %>
+    )
+    </div>
+  </div>
+
+  <div class="show-logs-head">
+    <div class="show-logs-head-set">
+      セット
+    </div>
+    <div class="show-logs-head-main">
+      種目
+    </div>
+    <div class="show-logs-head-weight">
+      重量[kg]
+    </div>
+    <div class="show-logs-head-rep">
+      レップ[回]
+    </div>
+  </div>
+  <div class="show-logs-main">
+    <% set = 0 %>
+    <% @logs.each do |log| %>
+      <div class="show-logs-column">
+        <div class="show-logs-set">
+          <% set = set + 1 %><%= set %>
+        </div>
+        <div class="show-logs-training">
+          <%= log.training %>
+        </div>
+        <div class="show-logs-weight">
+          <%= log.weight %>
+        </div>
+        <div class="show-logs-rep">
+          <%= log.rep %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+    <div class="option-buttons">
+    <div class="option-button">
+      <%= link_to "編集", root_path, class: "uk-button uk-button-primary uk-button-large" %>
+    </div>
+    <div class="option-button">
+      <%= link_to "削除", root_path, class: "uk-button uk-button-danger uk-button-large" %>
+    </div>
+  </div>
+
+  <div class=option-buttons>
+    <%= link_to "戻る", :back, class: "uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" %>
+  </div>
+
+</div>
+<%= render "shared/footer" %>
