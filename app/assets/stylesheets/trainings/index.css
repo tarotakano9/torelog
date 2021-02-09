@@ -1,0 +1,51 @@
+.index-main {
+  width: 90%;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-header {
+  margin-top: 10px;
+  background-color: black;
+  text-align: center;
+}
+
+.index-serch-wrapper {
+  margin-top: 10px;
+  height: 100px;
+  background-color: skyblue;
+}
+
+.index-days-wrapper {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 10vh;
+}
+
+.index-table-column {
+  width: 100%;
+  height: 7vh;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+.column-main {
+  width: 61%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-sub {
+  width: 13%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   # トレーニング記録へのルーティング
   resources :trainings do
     member do
-      get :submit_log
-      patch :create_log
+      get :show_result
     end
   end
 end

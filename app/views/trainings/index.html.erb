@@ -1,0 +1,55 @@
+<%= render "shared/header" %>
+<div class="index-main">
+  <div class="index-header">
+    <span class="form-header-text">トレーニング記録確認</span>
+  </div>
+
+  <div class="index-serch-wrapper">
+    検索フォーム
+  </div>
+
+  <div class="index-days-wrapper">
+    <table class="uk-table">
+      <tbody>
+        <tr>
+            <div class="index-table-column">
+              <div class="column-main">
+                日付
+              </div>
+              <div class="column-sub">
+                詳細
+              </div>
+              <div class="column-sub">
+                編集
+              </div>
+              <div class="column-sub">
+                削除
+              </div>
+            </div>
+        </tr>
+      </body>
+      <tbody>
+        <% @days.each do |day| %>
+        <tr>
+            <div class="index-table-column">
+              <div class="column-main">
+                <%= day.date %>
+              </div>
+              <div class="column-sub">
+                <%= link_to "show", root_path, class: "uk-button uk-button-primary uk-button-small" %>
+              </div>
+              <div class="column-sub">
+                <%= link_to "edit", root_path, class: "uk-button uk-button-primary uk-button-small" %>
+              </div>
+              <div class="column-sub">
+                <%= link_to "delete", root_path, class: "uk-button uk-button-danger uk-button-small" %>
+              </div>
+            </div>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<%= render "shared/footer" %>

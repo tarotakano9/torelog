@@ -2,12 +2,12 @@ class TrainingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @days = Day.includes(:user).order(id: 'DESC')
   end
 
   def new
     @day = Day.new
     @day.logs.build
-    @set = 0
   end
 
   def create
