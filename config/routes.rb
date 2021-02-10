@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get :show_result
       get :edit_log
+      patch :update_log
     end
   end
 end

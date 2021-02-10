@@ -1,0 +1,10 @@
+.edit-log-header {
+  margin-top: 10px;
+  width: 100%;
+  height: 20vh;
+  background-color: navy;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

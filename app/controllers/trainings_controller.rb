@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_day, only: [:edit, :destroy, :show, :update]
+  before_action :set_day, only: [:edit, :destroy, :show, :update, :edit_log, :update_log]
 
   def index
     @days = Day.includes(:user).where(user_id: current_user.id).order(date: 'DESC')
@@ -14,11 +14,18 @@ class TrainingsController < ApplicationController
   end
 
   def edit_log
-    
+  end
+
+  def update_log
+    if @day.update(update_day_params)
+      redirect_to trainings_path
+    else
+      render :edit
+    end
   end
 
   def update
-    if @day.update(day_params)
+    if @day.update(update_day_params)
       redirect_to trainings_path
     else
       render :edit
@@ -54,6 +61,14 @@ class TrainingsController < ApplicationController
   end
 
   def day_params
+    params.require(:day)
+      .permit(
+        :date, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg,
+        [logs_attributes: [:training, :weight, :rep, :day_id]])
+      .merge(user_id: current_user.id)
+  end
+
+  def update_day_params
     params.require(:day)
       .permit(
         :date, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg,

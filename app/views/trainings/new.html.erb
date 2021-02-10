@@ -1,8 +1,8 @@
 <%= render "shared/header" %>
-<div class="new-main">
+<div class="main">
   <%= form_with model: @day, url: trainings_path, class: "form-wrapper", local: true do |f| %>
     <div class="new-form-header">
-      <span class="form-header-text">トレーニング記録入力</span>
+      <span class="form-header-text">トレーニング記録[新規入力]</span>
     </div>
 
     <div class="error-messages-box">
@@ -11,7 +11,7 @@
 
     <div class="new-date-wrapper">
       <div class="new-date-wrapper-left">
-        <%= f.label :date, '日付', class: "form-text" %>
+        <span class="form-text">日付</span>
       </div>
       <div class="new-date-wrapper-right">
         <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class: "form-field" %>
@@ -79,23 +79,23 @@
             <%= render 'log_fields', f: i %>
           <% end %>
         </div>
-        <div class="add-association-button">
-          <%= link_to_add_association "セット追加", f, :logs, class: "uk-button uk-button-primary",
-            data: {
-              association_insertion_node: '#detail-association-insertion-point',
-              association_insertion_method: 'append'
-            } %>
+        <div class="option-buttons">
+          <div class="option-button">
+            <%= link_to_add_association "セット追加", f, :logs, class: "uk-button uk-button-danger",
+              data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'append'
+              } %>
+          </div>
+          <div class="option-button">
+            <%= f.submit "編集終了", class: "uk-button uk-button-primary" %>
+          </div>
         </div>
-      </div>
-
-      <div class="submit-button">
-        <%= f.submit "トレーニング終了", class: "uk-button uk-button-primary" %>
-      </div>
 
   <% end %>
 
   <div class=option-buttons>
-    <%= link_to "戻る", :back, class: "uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" %>
+    <%= link_to "BACK", :back, class: "uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" %>
   </div>
 
 </div>
