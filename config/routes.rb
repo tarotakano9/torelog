@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :trainings do
     member do
       get :show_result
+      get :edit_log
     end
   end
 end

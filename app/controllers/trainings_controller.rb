@@ -1,13 +1,36 @@
 class TrainingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_day, only: [:edit, :destroy, :show, :update]
 
   def index
     @days = Day.includes(:user).where(user_id: current_user.id).order(date: 'DESC')
   end
 
   def show
-    @day = Day.find(params[:id])
     @logs = Log.includes(:day).where(day_id: @day.id)
+  end
+
+  def edit
+  end
+
+  def edit_log
+    
+  end
+
+  def update
+    if @day.update(day_params)
+      redirect_to trainings_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @day.destroy
+        redirect_to trainings_path
+    else
+        render :index
+    end
   end
 
   def new
@@ -17,7 +40,6 @@ class TrainingsController < ApplicationController
 
   def create
     @day = Day.new(day_params)
-    judge_target_exists
     if @day.save
       redirect_to  root_path
     else
@@ -27,19 +49,15 @@ class TrainingsController < ApplicationController
 
   private
 
+  def set_day
+    @day = Day.find(params[:id])
+  end
+
   def day_params
     params.require(:day)
       .permit(
-        :date, :target_exists, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg,
-        [logs_attributes: [:training, :weight, :rep, :day_id, :_destroy]])
+        :date, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg,
+        [logs_attributes: [:training, :weight, :rep, :day_id, :_destroy, :id]])
       .merge(user_id: current_user.id)
-  end
-
-  def judge_target_exists
-    if @day.chest || @day.shoulder || @day.tricep || @day.bicep || @day.back || @day.abdominal || @day.leg
-      @day.target_exists = true
-    else
-      @day.target_exists = nil
-    end
   end
 end

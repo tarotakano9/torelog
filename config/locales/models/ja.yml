@@ -5,15 +5,22 @@ ja:
       log: 記録
     attributes:
       day:
-        target_exists: ターゲット部位
+        chest: 胸
+        shoulder: 肩
+        tricep: 上腕三頭筋
+        bicep: 上腕二頭筋
+        back: 背筋
+        leg: 脚
+        user_id: ユーザー
       day/logs:
         training: 種目
         weight: 重量
         rep: 回数
-    errors:
-      models:
-        day:
-          attributes:
-            target_exists:
-              format: '%{message}'
-              inclusion: '%{attribute}は１箇所以上入力してください。'
+        day_id: トレーニング実施日
+    # errors:
+    #   models:
+    #     day:
+    #       attributes:
+    #         target_exists:
+    #           format: '%{message}'
+    #           inclusion: '%{attribute}は１箇所以上入力してください。'

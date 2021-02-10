@@ -1,9 +1,9 @@
 class Day < ApplicationRecord
   # バリデーション
   validates :date, presence: true
+  validates :date, presence: true
 
   with_options inclusion: {in: [true, false]} do
-    validates :target_exists
     validates :chest
     validates :shoulder
     validates :tricep
@@ -12,6 +12,8 @@ class Day < ApplicationRecord
     validates :abdominal
     validates :leg
   end
+
+  validates_with AnyoneValidator
   
   # アソシエーション
   belongs_to :user

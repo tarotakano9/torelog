@@ -1,8 +1,8 @@
 <%= render "shared/header" %>
 <div class="new-main">
-  <%= form_with model: @day, url: trainings_path, class: "form-wrapper", local: true do |f| %>
+  <%= form_with model: @day, url: training_path(@day.id), class: "form-wrapper", local: true do |f| %>
     <div class="new-form-header">
-      <span class="form-header-text">トレーニング記録入力</span>
+      <span class="form-header-text">トレーニング記録編集</span>
     </div>
 
     <div class="error-messages-box">
@@ -14,7 +14,7 @@
         <%= f.label :date, '日付', class: "form-text" %>
       </div>
       <div class="new-date-wrapper-right">
-        <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d"), class: "form-field" %>
+        <%= f.date_field :date, value: @day.date, class: "form-field" %>
       </div>
     </div>
 
@@ -58,38 +58,12 @@
       </div>
     </div>
 
-      <%# ここからログのフォーム %>
-      <div class="new-log-wrapper">
-        <div class="new-log-header">
-          <div class="log-form-wrapper">
-            種目
-          </div>
-          <div class="log-form-wrapper">
-            重量[kg]
-          </div>
-          <div class="log-form-wrapper">
-            レップ[回]
-          </div>
-          <div class="log-remove-button">
-            削除
-          </div>
-        </div>
-        <div class="new-log-form-wrapper" id='detail-association-insertion-point'>
-          <%= f.fields_for :logs do |i| %>
-            <%= render 'log_fields', f: i %>
-          <% end %>
-        </div>
-        <div class="add-association-button">
-          <%= link_to_add_association "セット追加", f, :logs, class: "uk-button uk-button-primary",
-            data: {
-              association_insertion_node: '#detail-association-insertion-point',
-              association_insertion_method: 'append'
-            } %>
-        </div>
+      <div class="submit-button">
+        <%= f.submit "編集終了", class: "uk-button uk-button-primary" %>
       </div>
 
       <div class="submit-button">
-        <%= f.submit "トレーニング終了", class: "uk-button uk-button-primary" %>
+        <%= link_to "トレーニング内容確認", training_path(@day.id), class: "uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" %>
       </div>
 
   <% end %>

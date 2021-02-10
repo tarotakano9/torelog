@@ -2,7 +2,8 @@
 <div class="index-main">
   <div class="show-header">
     <div class="form-header-text"><%= @day.date %></div>
-    <div class="show-targets">(
+    <div class="show-targets">
+      ターゲット :
       <% if @day.chest %>
         胸
       <% end %>
@@ -10,21 +11,20 @@
         肩
       <% end %>
       <% if @day.tricep %>
-        三頭
+        上腕三頭筋
       <% end %>
       <% if @day.bicep %>
-        二頭
+        上腕二頭筋
       <% end %>
       <% if @day.back %>
-        背
+        背筋
       <% end %>
       <% if @day.abdominal %>
-        腹
+        腹筋
       <% end %>
       <% if @day.leg %>
         脚
       <% end %>
-    )
     </div>
   </div>
 
@@ -64,7 +64,7 @@
 
     <div class="option-buttons">
     <div class="option-button">
-      <%= link_to "編集", root_path, class: "uk-button uk-button-primary uk-button-large" %>
+      <%= link_to "編集", trainings/@day.id/edit_log(@log.id), class: "uk-button uk-button-primary uk-button-large" %>
     </div>
     <div class="option-button">
       <%= link_to "削除", root_path, class: "uk-button uk-button-danger uk-button-large" %>
@@ -72,7 +72,7 @@
   </div>
 
   <div class=option-buttons>
-    <%= link_to "戻る", :back, class: "uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" %>
+    <%= link_to "戻る", :back, class: "uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" %>
   </div>
 
 </div>
