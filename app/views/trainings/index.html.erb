@@ -25,7 +25,7 @@
     <div class="index-table-main">
       <% @days.each do |day| %>
         <div class="index-table-column">
-          <div class="column-main">
+          <div class="column-training-date">
             <%= link_to training_path(day.id) do %>
               <%= day.date %>
             <% end %>
@@ -75,6 +75,10 @@
             </div>
         </div>
       <% end %>
+    </div>
+
+    <div class="option-buttons">
+      <%= link_to "トレーニング追加", new_training_path, class: "uk-button uk-button-primary uk-button-large" %>
     </div>
 
     <div class=option-buttons>
