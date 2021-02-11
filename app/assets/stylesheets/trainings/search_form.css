@@ -1,0 +1,50 @@
+.search-wrapper {
+  width: 100%;
+  height: auto;
+  border: 2px solid gray;
+  margin: 25px auto;
+}
+
+.search-header {
+  width: 100%;
+  height: 20%;
+  min-height: 40px;
+  background-color: navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-header-text {
+  font-size: large;
+  font-weight: bold;
+  color: white;
+}
+
+.search-field {
+  width: 30%;
+  display: flex;
+  margin: 10px auto 10px 10vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-target-field {
+  width: 50%;
+  display: flex;
+  margin: 10px auto 10px 10vw;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search-form-field {
+  height: 30px;
+  border: 3px solid #007AB7;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 5px;
+}

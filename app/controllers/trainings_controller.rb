@@ -3,7 +3,9 @@ class TrainingsController < ApplicationController
   before_action :set_day, only: [:edit, :destroy, :show, :update, :edit_log, :update_log]
 
   def index
-    @days = Day.includes(:user).where(user_id: current_user.id).order(date: 'DESC')
+    @search_params = day_search_params
+    @days = Day.search(@search_params).includes(:user).where(user_id: current_user.id).order(date: 'DESC')
+    # @days = Day.includes(:user).where(user_id: current_user.id).order(date: 'DESC')
   end
 
   def show
@@ -58,6 +60,11 @@ class TrainingsController < ApplicationController
 
   def set_day
     @day = Day.find(params[:id])
+  end
+
+  def day_search_params
+    params.fetch(:search, {})
+      .permit(:date_from, :date_to, :chest, :shoulder, :tricep, :bicep, :back, :abdominal, :leg)
   end
 
   def day_params
