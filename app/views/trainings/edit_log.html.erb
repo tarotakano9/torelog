@@ -1,0 +1,82 @@
+<%= render "shared/header" %>
+<div class="new-main">
+  <%= form_with model: @day, url: update_log_training_path(@day, @log), class: "form-wrapper", local: true do |f| %>
+    <div class="new-form-header">
+      <span class="form-header-text">トレーニング記録[編集]</span>
+    </div>
+
+    <div class="error-messages-box">
+      <%= render 'shared/error_messages', model: f.object %>
+    </div>
+
+    <div class="edit-log-header">
+      <div class="form-header-text"><%= @day.date %></div>
+      <div class="show-targets">
+        ターゲット :
+        <% if @day.chest %>
+          胸
+        <% end %>
+        <% if @day.shoulder %>
+          肩
+        <% end %>
+        <% if @day.tricep %>
+          上腕三頭筋
+        <% end %>
+        <% if @day.bicep %>
+          上腕二頭筋
+        <% end %>
+        <% if @day.back %>
+          背筋
+        <% end %>
+        <% if @day.abdominal %>
+          腹筋
+        <% end %>
+        <% if @day.leg %>
+          脚
+        <% end %>
+      </div>
+    </div>
+
+      <%# ここからログのフォーム %>
+      <div class="new-log-wrapper">
+        <div class="new-log-header">
+          <div class="log-form-wrapper">
+            種目
+          </div>
+          <div class="log-form-wrapper">
+            重量[kg]
+          </div>
+          <div class="log-form-wrapper">
+            レップ[回]
+          </div>
+          <div class="log-remove-button">
+            削除
+          </div>
+        </div>
+        <div class="new-log-form-wrapper" id='detail-association-insertion-point'>
+          <%= f.fields_for :logs do |i| %>
+            <%= render 'log_fields', f: i %>
+          <% end %>
+        </div>
+        <div class="option-buttons">
+          <div class="option-button">
+            <%= link_to_add_association "セット追加", f, :logs, class: "uk-button uk-button-danger",
+              data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'append'
+              } %>
+          </div>
+          <div class="option-button">
+            <%= f.submit "編集終了", class: "uk-button uk-button-primary" %>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+
+  <div class=option-buttons>
+    <%= link_to "戻る", :back, class: "uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" %>
+  </div>
+
+</div>
+<%= render "shared/footer" %>

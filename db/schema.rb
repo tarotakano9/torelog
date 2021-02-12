@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_063732) do
 
   create_table "days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.date "date", null: false
-    t.boolean "target_exists", default: false, null: false
     t.boolean "chest", default: false, null: false
     t.boolean "shoulder", default: false, null: false
     t.boolean "tricep", default: false, null: false
