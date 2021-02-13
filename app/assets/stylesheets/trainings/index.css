@@ -34,7 +34,7 @@
 
 .index-table-main {
   width: 100%;
-  min-height: 7vh;
+  min-height: 0;
   max-height: 70vh;
   overflow: auto;
   border: 1px solid gray;
