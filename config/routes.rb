@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :option
       delete :destroy_user
+      delete :destroy_day
     end
   end
 

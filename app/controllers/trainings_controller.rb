@@ -5,7 +5,6 @@ class TrainingsController < ApplicationController
   def index
     @search_params = day_search_params
     @days = Day.search(@search_params).includes(:user).where(user_id: current_user.id).order(date: 'DESC')
-    # @days = Day.includes(:user).where(user_id: current_user.id).order(date: 'DESC')
   end
 
   def show

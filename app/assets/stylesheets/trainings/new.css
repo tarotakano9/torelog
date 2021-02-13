@@ -92,7 +92,8 @@
 
 .new-log-form-wrapper {
   width: 100%;
-  height: 85%;
+  min-height: 60px;
+  max-height: 85%;
   border: 1px solid #007AB7;
   overflow: auto;
 }

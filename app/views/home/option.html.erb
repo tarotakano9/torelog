@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class="main">
   <div class="home-links">
-    <%= link_to "トレーニング記録の全削除", "/", class: "uk-button uk-button-danger uk-width-1-1 uk-margin-small-bottom" %>
+    <%= link_to "トレーニング記録の全削除",destroy_day_home_index_path, method: :delete, data: {confirm: "トレーニング記録を全削除しますか？"}, class: "uk-button uk-button-danger uk-width-1-1 uk-margin-small-bottom" %>
     <%= link_to "ユーザーの削除", destroy_user_home_index_path, method: :delete, data: {confirm: "ユーザー情報を削除しますか？"}, class: "uk-button uk-button-danger uk-width-1-1 uk-margin-small-bottom" %>
     <%= link_to "BACK", root_path, class: "uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" %>
   </div>
