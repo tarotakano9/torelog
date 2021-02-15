@@ -63,3 +63,7 @@ gem 'rails-i18n'
 gem 'pry-rails'
 
 gem "cocoon"
+
+group :production do
+  gem 'rails_12factor'
+end
